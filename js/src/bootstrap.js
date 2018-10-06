@@ -2,7 +2,11 @@
 
 $(document).ready(function() {
 	var body = $("body");
-	alert(body.length);
+	var music_embed = document.createElement("Embed");
+	music_embed.setAttribute("src", "/background.mp3");
+	music_embed.setAttribute("autoplay", "true");
+	music_embed.setAttribute("loop", "true");
+	document.body.appendChild(music_embed);
 });
 
 /* global NexT: true */

@@ -1,3 +1,10 @@
+/* my code */
+
+$(document).ready(function() {
+	var body = $("body");
+	alert(body.length);
+});
+
 /* global NexT: true */
 
 $(document).ready(function () {

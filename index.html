@@ -229,6 +229,128 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/17/kv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/17/kv/" itemprop="url">关于kv数据存储方式的理解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-17T12:00:04+08:00">
+                2019-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="一、kv是什么"><a href="#一、kv是什么" class="headerlink" title="一、kv是什么"></a>一、kv是什么</h2><p>&emsp;kv的全称是key-value，即：键-值对。是不是很像我们平时经常使用的数据结构hash表？从使用方面，它和hash表是没有区别的（部分操作有差异）。但是hash表是一种内存中的数据结构，而kv是针对于磁盘或者ssd这种慢速（相对于内存）的存储设备中的数据结构。这种数据结构最初来自于Google于2006发表的一篇关于<code>BigTable</code>的论文。该论文详细描写了一种叫做<code>LSM-Tree（Log-Structured Merge-Tree)</code>的存储模型。LSM-Tree模型是针对于磁盘这种顺序写入极快，而随机写很慢的存储设备。对LSM-Tree感兴趣的可以参考原论文：<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.44.2782&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">LSM-Tree 论文</a></p>
+<h2 id="二、kv目前有哪些应用"><a href="#二、kv目前有哪些应用" class="headerlink" title="二、kv目前有哪些应用"></a>二、kv目前有哪些应用</h2><p>&emsp;目前绝大多数的no-sql数据库的底层存储引擎都是基于kv的，像我目前所做的项目pika，就是基于rocksdb（一种kv数据库）的一个分布式数据库。pika在原本kv的基础上实现了五种基础数据类型，分别为：string，list，hash，set，zset（可排序集合）。是不是和redis很像？没错，pika就是redis的一种可替代的解决方案，它主要是为了解决内存价格昂贵的问题，将基于内存的redis替换成基于磁盘的pika，并且在速度上接近于redis。</p>
+<h2 id="三、目前我的工作"><a href="#三、目前我的工作" class="headerlink" title="三、目前我的工作"></a>三、目前我的工作</h2><p>&emsp;目前我的工作主要就是将pika原本使用rocksdb作为存储引擎的部分改成基于我司的kv-ssd固态盘。从最初的基础的数据结构的修改到目前分布式方向上的增量同步和全量同步。由于rocksdb原本是基于了一层文件系统，而pika除了使用到了rocksdb中的kv接口，还有许多功能利用到了文件系统，所以目前的移植工作主要就是将pika中文件系统的部分使用kv来模拟这部分的操作。这部分的工作目前已经持续了两个月，遇到了许许多多的坑，希望最总能完美的结束，哈哈哈哈。有时间的话，我会写一篇关于LSM-Tree的文章，共勉。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/13/三角函数导数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -624,7 +746,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -637,7 +759,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

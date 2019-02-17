@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="algorithm," />
+  <meta name="keywords" content="ssd," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="question 1:describe:    在一个数组中，只有一个数是唯一的，其他的元素则都是有两两相同的数字。现在要求在时间复杂度为O(N)，空间复杂度为O(1)的情况下，找到这个唯一的数字。idea:    根据异或操作的性质，当两个相同的数字进行异或的时候，最终得到的结果为0，那么可以对数组中所有的数进行一次异或运算，最终得到的就是那个数。 question 2:describe:">
-<meta name="keywords" content="algorithm">
+<meta name="description" content="一、kv是什么&amp;emsp;kv的全称是key-value，即：键-值对。是不是很像我们平时经常使用的数据结构hash表？从使用方面，它和hash表是没有区别的（部分操作有差异）。但是hash表是一种内存中的数据结构，而kv是针对于磁盘或者ssd这种慢速（相对于内存）的存储设备中的数据结构。这种数据结构最初来自于Google于2006发表的一篇关于BigTable的论文。该论文详细描写了一种叫做LS">
+<meta name="keywords" content="ssd">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数组中只有一个数是唯一的">
-<meta property="og:url" content="http://yoursite.com/2019/01/26/数组中只有一个数是唯一的/index.html">
+<meta property="og:title" content="关于kv数据存储方式的理解">
+<meta property="og:url" content="http://yoursite.com/2019/02/17/kv/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="question 1:describe:    在一个数组中，只有一个数是唯一的，其他的元素则都是有两两相同的数字。现在要求在时间复杂度为O(N)，空间复杂度为O(1)的情况下，找到这个唯一的数字。idea:    根据异或操作的性质，当两个相同的数字进行异或的时候，最终得到的结果为0，那么可以对数组中所有的数进行一次异或运算，最终得到的就是那个数。 question 2:describe:">
+<meta property="og:description" content="一、kv是什么&amp;emsp;kv的全称是key-value，即：键-值对。是不是很像我们平时经常使用的数据结构hash表？从使用方面，它和hash表是没有区别的（部分操作有差异）。但是hash表是一种内存中的数据结构，而kv是针对于磁盘或者ssd这种慢速（相对于内存）的存储设备中的数据结构。这种数据结构最初来自于Google于2006发表的一篇关于BigTable的论文。该论文详细描写了一种叫做LS">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-26T15:09:32.653Z">
+<meta property="og:updated_time" content="2019-02-17T05:47:11.022Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数组中只有一个数是唯一的">
-<meta name="twitter:description" content="question 1:describe:    在一个数组中，只有一个数是唯一的，其他的元素则都是有两两相同的数字。现在要求在时间复杂度为O(N)，空间复杂度为O(1)的情况下，找到这个唯一的数字。idea:    根据异或操作的性质，当两个相同的数字进行异或的时候，最终得到的结果为0，那么可以对数组中所有的数进行一次异或运算，最终得到的就是那个数。 question 2:describe:">
+<meta name="twitter:title" content="关于kv数据存储方式的理解">
+<meta name="twitter:description" content="一、kv是什么&amp;emsp;kv的全称是key-value，即：键-值对。是不是很像我们平时经常使用的数据结构hash表？从使用方面，它和hash表是没有区别的（部分操作有差异）。但是hash表是一种内存中的数据结构，而kv是针对于磁盘或者ssd这种慢速（相对于内存）的存储设备中的数据结构。这种数据结构最初来自于Google于2006发表的一篇关于BigTable的论文。该论文详细描写了一种叫做LS">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/26/数组中只有一个数是唯一的/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/17/kv/"/>
 
 
 
 
 
-  <title>数组中只有一个数是唯一的 | Hexo</title>
+  <title>关于kv数据存储方式的理解 | Hexo</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/26/数组中只有一个数是唯一的/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/17/kv/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数组中只有一个数是唯一的</h1>
+          <h1 class="post-title" itemprop="name headline">关于kv数据存储方式的理解</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-26T21:22:34+08:00">
-                2019-01-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-17T12:00:04+08:00">
+                2019-02-17
               </time>
             
 
@@ -300,8 +300,9 @@
       
 
       
-        <p>question 1:<br>describe:<br>    在一个数组中，只有一个数是唯一的，其他的元素则都是有两两相同的数字。现在要求在时间复杂度为O(N)，空间复杂度为O(1)的情况下，找到这个唯一的数字。<br>idea:<br>    根据异或操作的性质，当两个相同的数字进行异或的时候，最终得到的结果为0，那么可以对数组中所有的数进行一次异或运算，最终得到的就是那个数。</p>
-<p>question 2:<br>describe:<br>    在一个数组中，有且只有两个不同的数是唯一的，其他的元素则是两两相同数字，那么怎么找到这两个数呢？现在要求时间复杂度为O(N)，空间复杂度为一个常数。<br>idea:<br>    先对整个数组进行一次异或，最终得到的结果是两个不同数字的异或结果。那么取的这个二进制数中的第一个为1的位置，然后再对数组进行一次异或。异或结果为1的分到A组，异或结果为0的分到B组，那么此时必定是相同数字在同一组，而这两个数字也必定在不同的组，那么再分别对A,B两组进行一次异或操作，最终得到的就是这两个数字。</p>
+        <h2 id="一、kv是什么"><a href="#一、kv是什么" class="headerlink" title="一、kv是什么"></a>一、kv是什么</h2><p>&emsp;kv的全称是key-value，即：键-值对。是不是很像我们平时经常使用的数据结构hash表？从使用方面，它和hash表是没有区别的（部分操作有差异）。但是hash表是一种内存中的数据结构，而kv是针对于磁盘或者ssd这种慢速（相对于内存）的存储设备中的数据结构。这种数据结构最初来自于Google于2006发表的一篇关于<code>BigTable</code>的论文。该论文详细描写了一种叫做<code>LSM-Tree（Log-Structured Merge-Tree)</code>的存储模型。LSM-Tree模型是针对于磁盘这种顺序写入极快，而随机写很慢的存储设备。对LSM-Tree感兴趣的可以参考原论文：<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.44.2782&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">LSM-Tree 论文</a></p>
+<h2 id="二、kv目前有哪些应用"><a href="#二、kv目前有哪些应用" class="headerlink" title="二、kv目前有哪些应用"></a>二、kv目前有哪些应用</h2><p>&emsp;目前绝大多数的no-sql数据库的底层存储引擎都是基于kv的，像我目前所做的项目pika，就是基于rocksdb（一种kv数据库）的一个分布式数据库。pika在原本kv的基础上实现了五种基础数据类型，分别为：string，list，hash，set，zset（可排序集合）。是不是和redis很像？没错，pika就是redis的一种可替代的解决方案，它主要是为了解决内存价格昂贵的问题，将基于内存的redis替换成基于磁盘的pika，并且在速度上接近于redis。</p>
+<h2 id="三、目前我的工作"><a href="#三、目前我的工作" class="headerlink" title="三、目前我的工作"></a>三、目前我的工作</h2><p>&emsp;目前我的工作主要就是将pika原本使用rocksdb作为存储引擎的部分改成基于我司的kv-ssd固态盘。从最初的基础的数据结构的修改到目前分布式方向上的增量同步和全量同步。由于rocksdb原本是基于了一层文件系统，而pika除了使用到了rocksdb中的kv接口，还有许多功能利用到了文件系统，所以目前的移植工作主要就是将pika中文件系统的部分使用kv来模拟这部分的操作。这部分的工作目前已经持续了两个月，遇到了许许多多的坑，希望最总能完美的结束，哈哈哈哈。有时间的话，我会写一篇关于LSM-Tree的文章，共勉。</p>
 
       
     </div>
@@ -319,7 +320,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+            <a href="/tags/ssd/" rel="tag"># ssd</a>
           
         </div>
       
@@ -332,15 +333,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/02/13/三角函数导数/" rel="next" title="三角函数导数">
+                <i class="fa fa-chevron-left"></i> 三角函数导数
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/02/蓝眼睛的人问题/" rel="prev" title="蓝眼睛岛问题">
-                蓝眼睛岛问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -392,8 +393,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -444,6 +454,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、kv是什么"><span class="nav-number">1.</span> <span class="nav-text">一、kv是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、kv目前有哪些应用"><span class="nav-number">2.</span> <span class="nav-text">二、kv目前有哪些应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、目前我的工作"><span class="nav-number">3.</span> <span class="nav-text">三、目前我的工作</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
